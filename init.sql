@@ -60,6 +60,7 @@ CREATE TABLE "Product" (
 CREATE TABLE "Photo" (
 	id SERIAL PRIMARY KEY,
 	productId INT REFERENCES "Product" (id),
+	url VARCHAR(200),
 	description VARCHAR(60)
 );
 
