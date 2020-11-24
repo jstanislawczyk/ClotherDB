@@ -107,18 +107,6 @@ $$ LANGUAGE plpgsql;
 
 call createOrder(1);
 
-/* Create customer order */
-
-CREATE OR REPLACE PROCEDURE createOrder(customerId int)  
-AS $$
-	BEGIN
-		INSERT INTO "Order"(customerid, status, date)
-		VALUES (customerId, 'CREATED', CURRENT_DATE);
-	END
-$$ LANGUAGE plpgsql;
-
-call createOrder(1);
-
 /* Make payment */
 
 CREATE OR REPLACE PROCEDURE makePaymentForOrder(orderId int, value bigint, type varchar, provider varchar)  
